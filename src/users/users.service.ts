@@ -1,4 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { PrismaService } from 'src/database/PrismaServices';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
@@ -6,6 +7,8 @@ import { User } from './entities/user.entity';
 @Injectable()
 export class UsersService {
   private users: User[] = [];
+
+  constructor(private prisma: PrismaService) {}
 
   create(createUserDto: CreateUserDto) {
     const currentMaxId =
