@@ -17,8 +17,4 @@ export class CreateUserDto {
   cep: string;
   observacao: string | null;
   dataCompra: Date | null;
-
-  constructor(partial: Partial<CreateUserDto>) {
-    Object.assign(this, partial);
-  }
 }
