@@ -54,7 +54,6 @@ export class UsersService {
   async update(id: number, updateUserDto: UpdateUserDto) {
     const user = await this.findOne(id);
 
-    // Verifica se dataNascimento é uma string e tenta fazer o parse para Date
     if (typeof updateUserDto.dataNascimento === 'string') {
       updateUserDto.dataNascimento = new Date(updateUserDto.dataNascimento);
     }
