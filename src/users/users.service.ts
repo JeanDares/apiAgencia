@@ -23,7 +23,6 @@ export class UsersService {
 
     const userToCreate = { ...createUserDto };
 
-    // Verifica se dataNascimento é uma string e tenta fazer o parse para Date
     if (typeof userToCreate.dataNascimento === 'string') {
       userToCreate.dataNascimento = new Date(userToCreate.dataNascimento);
     }
